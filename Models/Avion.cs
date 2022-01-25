@@ -10,20 +10,21 @@ namespace Aviokompanija.Models{
         [Key]
         [Column("ID")]    
         public int ID{get;set;}
-        [Column("kodniNaziv")]
 
+        [Column("kodniNaziv")]
         [StringLength(30)] 
         [Required(ErrorMessage="Neophodno je uneti naziv aviona!")]
         public string kodniNaziv{get;set;}
 
         [StringLength(30)] 
-        [Required(ErrorMessage="Neophodno je uneti zemlju destinacija!")]
+        [Required(ErrorMessage="Neophodno je uneti model!")]
         [Column("model")]
         public string model{get;set;}
 
         [Column("brojSedista")]
         public int brojSedista{get;set;}
-        [JsonIgnore]     ////sluzi da spreci serijaliz.
+        
+        [JsonIgnore]     
         public virtual Aviocompany Aviokompanija{get;set;}
         
         public List<ZakazanLet> ZakazanLet{get;set;}
